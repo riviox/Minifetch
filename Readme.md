@@ -1,6 +1,6 @@
 # Minifetch
 
-<center>[logo](/minifetch.png)</center>
+<center>![Minifetch Logo](img/minifetch.png)</center>
 
 Minifetch is a lightweight system information display tool designed for use on GNU/Linux systems. It provides users with a quick overview of their system's details, making it convenient for system administrators and users alike.
 
