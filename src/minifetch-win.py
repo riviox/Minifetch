@@ -4,7 +4,7 @@ import os
 import platform
 import subprocess
 
-softwarever = "6.9.1"
+softwarever = "9.11"
 
 ostype = os.sys.platform
 if ostype == "linux":
@@ -13,11 +13,17 @@ uname = os.getlogin()
 osver = platform.release()
 path = os.getcwd()
 packages = "soon"
-arch = platform.architecture()
-shell = "cmd"
+archp = platform.architecture()
+if archp == "('64bit', 'ELF')":
+    arch = "64bit"
+else:
+    arch = "32bit"
+
+
+shell = "C:\Windows\System32\cmd.exe"
 print(f"""
         {Fore.LIGHTBLACK_EX}#####            
-       {Fore.LIGHTBLACK_EX}#######         {Fore.LIGHTMAGENTA_EX}MiniFetch by .riviox v{softwarever}
+       {Fore.LIGHTBLACK_EX}#######         {Fore.LIGHTMAGENTA_EX}MiniFetch v{softwarever}
        {Fore.LIGHTBLACK_EX}##{Fore.WHITE}O{Fore.LIGHTBLACK_EX}#{Fore.WHITE}O{Fore.LIGHTBLACK_EX}##         {Fore.LIGHTMAGENTA_EX}User: {uname}
        {Fore.LIGHTBLACK_EX}#{Fore.LIGHTYELLOW_EX}#####{Fore.LIGHTBLACK_EX}#         {Fore.LIGHTMAGENTA_EX}OS: {osname}
      {Fore.LIGHTBLACK_EX}##{Fore.WHITE}##{Fore.LIGHTYELLOW_EX}###{Fore.WHITE}##{Fore.LIGHTBLACK_EX}##       {Fore.LIGHTMAGENTA_EX}Path: {path}
