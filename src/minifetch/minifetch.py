@@ -1,30 +1,21 @@
-import colorama
-from colorama import *
-import os
-import platform
-import subprocess
+import os, colorama, platform, subprocess; from colorama import Fore
 
 softwarever = "9.11"
 
-ostype = os.sys.platform
-if ostype == "linux":
+ostype = platform.system()
+if ostype == "Linux":
     osname = "GNU/Linux"
-uname = os.getlogin()
+uname = platform.uname().node
 osver = platform.release()
-path = os.getcwd()
+path = subprocess.run(["pwd"], capture_output=True, text=True).stdout.strip()
 packages = "soon"
-def getarch():
-  archp = platform.architecture()
-  if archp == "('64bit', 'ELF')":
-    arch = "64bit"
-  else:
-    arch = "32bit"
-    return arch
-arch = getarch()
+
+arch = platform.machine()
 shell = os.getenv("SHELL")
-shver = subprocess.check_output([shell, "--version"]).decode().strip()
+shver = subprocess.run([shell, "--version"], capture_output=True, text=True).stdout.strip()
+
 print(f"""
-        {Fore.LIGHTBLACK_EX}#####            
+        {Fore.LIGHTBLACK_EX}#####
        {Fore.LIGHTBLACK_EX}#######         {Fore.LIGHTMAGENTA_EX}MiniFetch v{softwarever}
        {Fore.LIGHTBLACK_EX}##{Fore.WHITE}O{Fore.LIGHTBLACK_EX}#{Fore.WHITE}O{Fore.LIGHTBLACK_EX}##         {Fore.LIGHTMAGENTA_EX}User: {uname}
        {Fore.LIGHTBLACK_EX}#{Fore.LIGHTYELLOW_EX}#####{Fore.LIGHTBLACK_EX}#         {Fore.LIGHTMAGENTA_EX}OS: {osname}
@@ -34,7 +25,7 @@ print(f"""
    {Fore.LIGHTBLACK_EX}#{Fore.WHITE}############{Fore.LIGHTBLACK_EX}###    {Fore.LIGHTMAGENTA_EX}Arch: {arch}
   {Fore.LIGHTYELLOW_EX}##{Fore.LIGHTBLACK_EX}#{Fore.WHITE}#########{Fore.LIGHTBLACK_EX}##{Fore.LIGHTYELLOW_EX}###    {Fore.LIGHTMAGENTA_EX}Shell: {shell}
 {Fore.LIGHTYELLOW_EX}######{Fore.LIGHTBLACK_EX}#{Fore.WHITE}#######{Fore.LIGHTBLACK_EX}#{Fore.LIGHTYELLOW_EX}######  {Fore.LIGHTMAGENTA_EX}Shell version: {shver}
-{Fore.LIGHTYELLOW_EX}#######{Fore.LIGHTBLACK_EX}#{Fore.WHITE}#####{Fore.LIGHTBLACK_EX}#{Fore.LIGHTYELLOW_EX}#######   
+{Fore.LIGHTYELLOW_EX}#######{Fore.LIGHTBLACK_EX}#{Fore.WHITE}#####{Fore.LIGHTBLACK_EX}#{Fore.LIGHTYELLOW_EX}#######
   {Fore.LIGHTYELLOW_EX}#####{Fore.LIGHTBLACK_EX}#######{Fore.LIGHTYELLOW_EX}##### 
 
 
