@@ -4,7 +4,7 @@ import os
 import platform
 import subprocess
 
-softwarever = "9.11"
+softwarever = "10.0.1 [DEV BUILD]"
 
 ostype = os.sys.platform
 if ostype == "linux":

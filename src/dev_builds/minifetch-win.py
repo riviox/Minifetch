@@ -13,16 +13,14 @@ uname = os.getlogin()
 osver = platform.release()
 path = os.getcwd()
 packages = "soon"
-def getarch():
-  archp = platform.architecture()
-  if archp == "('64bit', 'ELF')":
+archp = platform.architecture()
+if archp == "('64bit', 'ELF')":
     arch = "64bit"
-  else:
+else:
     arch = "32bit"
-    return arch
-arch = getarch()
-shell = os.getenv("SHELL")
-shver = subprocess.check_output([shell, "--version"]).decode().strip()
+
+
+shell = "C:\Windows\System32\cmd.exe"
 print(f"""
         {Fore.LIGHTBLACK_EX}#####            
        {Fore.LIGHTBLACK_EX}#######         {Fore.LIGHTMAGENTA_EX}MiniFetch v{softwarever}
@@ -30,10 +28,10 @@ print(f"""
        {Fore.LIGHTBLACK_EX}#{Fore.LIGHTYELLOW_EX}#####{Fore.LIGHTBLACK_EX}#         {Fore.LIGHTMAGENTA_EX}OS: {osname}
      {Fore.LIGHTBLACK_EX}##{Fore.WHITE}##{Fore.LIGHTYELLOW_EX}###{Fore.WHITE}##{Fore.LIGHTBLACK_EX}##       {Fore.LIGHTMAGENTA_EX}Path: {path}
     {Fore.LIGHTBLACK_EX}#{Fore.WHITE}##########{Fore.LIGHTBLACK_EX}##      {Fore.LIGHTMAGENTA_EX}Version: {osver}
-   {Fore.LIGHTBLACK_EX}#{Fore.WHITE}############{Fore.LIGHTBLACK_EX}##     {Fore.LIGHTMAGENTA_EX}Packages: {packages}
-   {Fore.LIGHTBLACK_EX}#{Fore.WHITE}############{Fore.LIGHTBLACK_EX}###    {Fore.LIGHTMAGENTA_EX}Arch: {arch}
-  {Fore.LIGHTYELLOW_EX}##{Fore.LIGHTBLACK_EX}#{Fore.WHITE}#########{Fore.LIGHTBLACK_EX}##{Fore.LIGHTYELLOW_EX}###    {Fore.LIGHTMAGENTA_EX}Shell: {shell}
-{Fore.LIGHTYELLOW_EX}######{Fore.LIGHTBLACK_EX}#{Fore.WHITE}#######{Fore.LIGHTBLACK_EX}#{Fore.LIGHTYELLOW_EX}######  {Fore.LIGHTMAGENTA_EX}Shell version: {shver}
+   {Fore.LIGHTBLACK_EX}#{Fore.WHITE}############{Fore.LIGHTBLACK_EX}##     {Fore.LIGHTMAGENTA_EX}Arch: {arch}
+   {Fore.LIGHTBLACK_EX}#{Fore.WHITE}############{Fore.LIGHTBLACK_EX}###    {Fore.LIGHTMAGENTA_EX}Shell: {shell}
+  {Fore.LIGHTYELLOW_EX}##{Fore.LIGHTBLACK_EX}#{Fore.WHITE}#########{Fore.LIGHTBLACK_EX}##{Fore.LIGHTYELLOW_EX}###    {Fore.LIGHTMAGENTA_EX}
+{Fore.LIGHTYELLOW_EX}######{Fore.LIGHTBLACK_EX}#{Fore.WHITE}#######{Fore.LIGHTBLACK_EX}#{Fore.LIGHTYELLOW_EX}######  {Fore.LIGHTMAGENTA_EX}
 {Fore.LIGHTYELLOW_EX}#######{Fore.LIGHTBLACK_EX}#{Fore.WHITE}#####{Fore.LIGHTBLACK_EX}#{Fore.LIGHTYELLOW_EX}#######   
   {Fore.LIGHTYELLOW_EX}#####{Fore.LIGHTBLACK_EX}#######{Fore.LIGHTYELLOW_EX}##### 
 
