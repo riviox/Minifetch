@@ -17,3 +17,9 @@ Minifetch is a lightweight system information display tool designed for use on G
    cd Minifetch
    make install
    ```
+
+## To do
+```
+[ ] Screenshots
+[x] logo
+[ ] Packets
